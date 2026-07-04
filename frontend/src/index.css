@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #141319;
+}
+
+::selection {
+  background: #ff7a5c;
+  color: #141319;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #141319;
+}
+::-webkit-scrollbar-thumb {
+  background: #2f2d38;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a5c;
+}
+
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+.glass {
+  background: rgba(28, 27, 35, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.text-gradient {
+  background-image: linear-gradient(135deg, #ffab91 0%, #ff7a5c 60%, #e85d3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1c1b23 25%, #26242e 37%, #1c1b23 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+input:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #ff7a5c;
+  outline-offset: 2px;
+}
