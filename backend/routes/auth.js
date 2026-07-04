@@ -221,12 +221,19 @@ router.post("/admin-login", async (req, res) => {
       });
     }
 
-    const user = db.find(
-      "users",
-      u =>
-        u.email.toLowerCase() === email.toLowerCase() &&
-        u.role === "admin"
-    )[0];
+    const users = db.all("users");
+
+console.log("===== USERS =====");
+console.log(users);
+
+const user = users.find(
+  u =>
+    u.email.toLowerCase() === email.toLowerCase() &&
+    u.role === "admin"
+);
+
+console.log("===== FOUND USER =====");
+console.log(user);
 
     if (!user) {
       return res.status(401).json({
